@@ -1,4 +1,6 @@
 *.csproj
 *.sln
+*.userprefs
 Library/
 temp/
+cathar/cathar.userprefs

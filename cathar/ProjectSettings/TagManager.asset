@@ -14,9 +14,9 @@ TagManager:
   - 
   - 
   - GroundCollider
-  - Character
-  - 
-  - 
+  - CharacterCollider
+  - CharacterHitBox
+  - CharacterWeapon
   - 
   - 
   - 
