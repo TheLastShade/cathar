@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAnimationHandler : MonoBehaviour {
-
+public class PlayerAnimationHandler : MonoBehaviour 
+{
+	public float m_MagnitureMultiplicator = 1f;
+	public float m_MagnitureMin = 0.1f;
+	public float m_MagnitureMax = 1f;
 	public Animator m_Animator;
 	
 	private Rigidbody2D m_RigidBody;
@@ -16,13 +19,19 @@ public class PlayerAnimationHandler : MonoBehaviour {
 	void Update () 
 	{
 		Vector2 velocity = m_RigidBody.velocity.normalized;
-		bool isWalking = (m_RigidBody.velocity.magnitude > 0f);
-		if (isWalking) {
-
+		float magnitude = m_RigidBody.velocity.magnitude;
+		if (magnitude > 0f) 
+		{
 			m_Animator.SetFloat ("x", velocity.x);
 			m_Animator.SetFloat ("y", velocity.y);
 		}
 
-		m_Animator.SetBool ("isWalking", isWalking);
+		float walkingSpeed = magnitude * m_MagnitureMultiplicator;
+		if (walkingSpeed > 0f) 
+		{
+			walkingSpeed = Mathf.Min (m_MagnitureMax, walkingSpeed);
+			walkingSpeed = Mathf.Max (m_MagnitureMin, walkingSpeed);
+		}
+		m_Animator.SetFloat ("walkingSpeed", walkingSpeed);
 	}
 }
