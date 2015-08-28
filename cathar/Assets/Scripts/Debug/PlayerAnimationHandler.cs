@@ -20,18 +20,17 @@ public class PlayerAnimationHandler : MonoBehaviour
 	{
 		Vector2 velocity = m_RigidBody.velocity.normalized;
 		float magnitude = m_RigidBody.velocity.magnitude;
-		if (magnitude > 0f) 
+		bool isWalking = magnitude > 0f;
+		if (isWalking) 
 		{
 			m_Animator.SetFloat ("x", velocity.x);
 			m_Animator.SetFloat ("y", velocity.y);
 		}
 
 		float walkingSpeed = magnitude * m_MagnitureMultiplicator;
-		if (walkingSpeed > 0f) 
-		{
-			walkingSpeed = Mathf.Min (m_MagnitureMax, walkingSpeed);
-			walkingSpeed = Mathf.Max (m_MagnitureMin, walkingSpeed);
-		}
+		walkingSpeed = Mathf.Min (m_MagnitureMax, walkingSpeed);
+		walkingSpeed = Mathf.Max (m_MagnitureMin, walkingSpeed);
 		m_Animator.SetFloat ("walkingSpeed", walkingSpeed);
+		m_Animator.SetBool ("isWalking", isWalking);
 	}
 }

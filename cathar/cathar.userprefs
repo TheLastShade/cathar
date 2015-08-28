@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Debug\PlayerMovements.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Debug\PlayerAnimationHandler.cs">
     <Files>
-      <File FileName="Assets\Scripts\Debug\PlayerMovements.cs" Line="19" Column="46" />
+      <File FileName="Assets\Scripts\Debug\Follow2DTransform.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\Debug\PlayerMovements.cs" Line="20" Column="51" />
+      <File FileName="Assets\Scripts\Debug\PlayerAnimationHandler.cs" Line="4" Column="53" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
