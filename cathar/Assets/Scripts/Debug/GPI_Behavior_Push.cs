@@ -49,4 +49,14 @@ public class GPI_Behavior_Push : MonoBehaviour {
 			//body.velocity = Vector2.zero;
 		}
 	}
+
+
+	void Pull(){
+		isBeingPushed = false;
+		isBeingPulled = true;
+	}
+
+	void StopPull(){
+		isBeingPulled = false;
+	}
 }
