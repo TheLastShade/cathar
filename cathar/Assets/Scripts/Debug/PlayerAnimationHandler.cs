@@ -10,14 +10,28 @@ public class PlayerAnimationHandler : MonoBehaviour
 	
 	private Rigidbody2D m_RigidBody;
 	// Use this for initialization
-	void Start () 
-	{
+	void Start () {
 		m_RigidBody = GetComponent<Rigidbody2D> ();
+		PlayerAttack playerAttack = GetComponent<PlayerAttack> ();
+		if (playerAttack != null) {
+			playerAttack.OnAttackTrigger += OnAttackTrigger;
+		}
+	}
+
+	void OnDestroy(){
+		PlayerAttack playerAttack = GetComponent<PlayerAttack> ();
+		if (playerAttack != null) {
+			playerAttack.OnAttackTrigger -= OnAttackTrigger;
+		}
+	}
+
+	void OnAttackTrigger ()
+	{
+		m_Animator.SetTrigger ("AttackTrigger");
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
+	void Update () {
 		Vector2 velocity = m_RigidBody.velocity.normalized;
 		float magnitude = m_RigidBody.velocity.magnitude;
 		bool isWalking = magnitude > 0f;
