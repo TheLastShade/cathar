@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour {
 	private float m_CurrentWaiting;
 	// Update is called once per frame
 	void Update () {
-		float fire = Input.GetAxis ("Button1");
+		float fire = Input.GetAxis ("Button0");
 
 		if (m_CurrentWaiting > 0) {
 			m_CurrentWaiting -= Time.deltaTime;
