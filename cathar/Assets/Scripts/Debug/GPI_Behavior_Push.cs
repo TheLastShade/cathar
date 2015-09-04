@@ -29,13 +29,15 @@ public class GPI_Behavior_Push : MonoBehaviour {
 
 			float x = (direction.x);
 			float y = (direction.y);
+			float x_abs = Mathf.Abs (x);
+			float y_abs = Mathf.Abs (y);
 
-			if(Mathf.Abs (x) > Mathf.Abs (y)){
+			if(x_abs > y_abs){
 				y = 0;
-				x = x / Mathf.Abs(x);
+				x = x / x_abs;
 			} else {
 				x = 0;
-				y = y / Mathf.Abs(y);
+				y = y / y_abs;
 			}
 			direction = new Vector2 (x,y);
 		}
