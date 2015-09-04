@@ -23,7 +23,7 @@ public class GPI_Behavior_Push : MonoBehaviour {
 
 		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
 
-		if (aCollision != null) {
+		if (playerStat != null) {
 			isBeingPushed = true;
 			direction = ((this.transform.position) - (aCollision.gameObject.transform.position));
 
