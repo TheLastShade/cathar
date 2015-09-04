@@ -3,7 +3,8 @@ using System.Collections;
 
 public class GPI_Behavior_Push : MonoBehaviour {
 
-	bool isDragging = false;
+	bool isBeingPushed = false;
+	bool isBeingPulled = false;
 	Rigidbody2D body;
 	int speed = 50000;
 	Vector2 direction;
@@ -13,7 +14,7 @@ public class GPI_Behavior_Push : MonoBehaviour {
 	}
 
 	void Update(){
-		if (isDragging) {
+		if (isBeingPushed) {
 			body.AddForce(direction * speed);
 		}
 	}
@@ -23,7 +24,7 @@ public class GPI_Behavior_Push : MonoBehaviour {
 		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
 
 		if (aCollision != null) {
-			isDragging = true;
+			isBeingPushed = true;
 			direction = ((this.transform.position) - (aCollision.gameObject.transform.position));
 
 			float x = (direction.x);
@@ -42,7 +43,7 @@ public class GPI_Behavior_Push : MonoBehaviour {
 
 	void OnCollisionExit2D (Collision2D coll){
 		if (coll.gameObject.tag == "Player") {
-			isDragging = false;
+			isBeingPushed = false;
 
 			//If we want a harder stop
 			//body.velocity = Vector2.zero;
