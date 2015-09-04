@@ -13,8 +13,8 @@ public class PlayerMovements : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		float axisX = Input.GetAxis ("Horizontal");
-		float axisY = Input.GetAxis("Vertical");
+		float axisX = Input.GetAxis (ControllerSave.m_HorizontalAxis);
+		float axisY = Input.GetAxis(ControllerSave.m_VerticalAxis);
 
 		Vector2 velocity = new Vector2(Mathf.Lerp(0, axisX, 0.8f),
 		                               Mathf.Lerp(0, axisY, 0.8f));
