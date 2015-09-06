@@ -24035,6 +24035,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraTopLeft: {fileID: 435000}
   m_CameraBottomRight: {fileID: 481820}
+  m_ListGpi:
+  - {fileID: 194300, guid: f3124ef8b93237246852f377b9571059, type: 2}
+  - {fileID: 135320, guid: 539d94225bb01ea4fab9b858178a6d69, type: 2}
+  - {fileID: 110130, guid: 9e4b53d355547eb46ba94bd89579e0f4, type: 2}
+  - {fileID: 184952, guid: a3f708bcd408cf145964cac36e1d93d7, type: 2}
+  - {fileID: 157788, guid: ce30cc88d28cc394db9413ddd6cb55e5, type: 2}
+  - {fileID: 142948, guid: 70dea74100470344ba320a734d9282d4, type: 2}
 --- !u!212 &21200002
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -44737,7 +44744,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_ListGpi.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170838}
