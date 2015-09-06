@@ -5,6 +5,14 @@ using System.Collections.Generic;
 
 public class ApplicationManager : MonoBehaviour {
 
+	static private ApplicationManager m_Instance;
+	public static ApplicationManager Instance {get {return m_Instance;}}
+
+	void Awake()
+	{
+		m_Instance = this;
+	}
+
 	public Action OnManagersInitialized = delegate {};
 
 	public List<GameObject> m_ListManager;

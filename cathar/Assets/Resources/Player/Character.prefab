@@ -308,7 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxHealth: 128
   m_CurrentHealth: 128
-  m_MovementSpeed: 1
+  m_MovementSpeed: 60
+  m_MovementDrag: 20
 --- !u!114 &11414540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,7 +414,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_MovementSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_MovementDrag
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163670}
