@@ -12,10 +12,6 @@ public class GPI_Behavior_AutoMove : MonoBehaviour {
 		AdjustSpeed ();
 	}
 
-	void Update(){
-		print (body.velocity.magnitude);
-	}
-
 	void OnCollisionEnter2D (Collision2D aCollision){
 		speed = -speed;
 		AdjustSpeed ();

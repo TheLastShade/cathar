@@ -32838,6 +32838,9 @@ GameObject:
   - 50: {fileID: 1520773096}
   - 61: {fileID: 1520773095}
   - 114: {fileID: 1520773094}
+  - 114: {fileID: 1520773097}
+  - 114: {fileID: 1520773099}
+  - 61: {fileID: 1520773098}
   m_Layer: 0
   m_Name: TrapGPI
   m_TagString: Untagged
@@ -32916,7 +32919,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520773091}
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -32924,7 +32927,45 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1520773097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520773091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+--- !u!61 &1520773098
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520773091}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .800000012, y: .800000012}
+--- !u!114 &1520773099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1520773091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3baeff3011903c14aa8a491e42fa45a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WaitingTimeSec: 2
+  m_QuantityToChange: -5
 --- !u!1 &1524379925
 GameObject:
   m_ObjectHideFlags: 0
