@@ -3,49 +3,80 @@ using System.Collections;
 
 public class GPI_Behavior_PushPull : MonoBehaviour {
 
-	bool isBeingPushed = false;
-	bool isBeingPulled = false;
+	bool isBeingDragged = false;
 	Rigidbody2D body;
-	int speed = 50000;
+	int speed = 20;
 	Vector2 direction;
 	bool isActioning = false;
 	PlayerAction playerAction;
+	Rigidbody2D playerBody;
+	DistanceJoint2D distanceJoint;
 
 	void Start(){
 		body = this.GetComponent<Rigidbody2D> ();
-		//playerAction = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<PlayerAction> ();
+		body.isKinematic = true;
+		//body.constraints = RigidbodyConstraints2D.FreezeAll;
 	}
 
 	void Update(){
 
 		if (playerAction != null) {
+
+			//Check if that button is held
 			isActioning = playerAction.getIsActioning ();
-			
-			if (isActioning && isBeingPushed) {
-				isBeingPulled = true;
-				isBeingPushed = false;
-			} 
-			
-			if (!isActioning && isBeingPulled) {
-				isBeingPulled = false;
-				isBeingPushed = true;
+
+			if (!isActioning){
+				if (distanceJoint != null){
+					Destroy (distanceJoint);
+					//body.constraints = RigidbodyConstraints2D.FreezeAll;
+				}
+				isBeingDragged = false;
+				body.isKinematic = true;
 			}
+
 			
-			if (isBeingPushed) {
-				body.AddForce (direction * speed);
-			}
-			
-			if (isBeingPulled) {
-				//body.AddForce(-direction * speed);
-				//Create a hingejoint?
-				SpringJoint2D springJoint = gameObject.AddComponent<SpringJoint2D> () as SpringJoint2D;
+			if (isBeingDragged) {
+				if (distanceJoint == null) {
+					distanceJoint = gameObject.AddComponent<DistanceJoint2D> () as DistanceJoint2D;
+					distanceJoint.connectedBody = playerBody;
+					distanceJoint.distance = 0;
+					distanceJoint.anchor = -direction / 1.8f;
+					//distanceJoint.enableCollision = true;
+
+					if (direction.x != 0){
+						body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
+					} else {
+						body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+					}
+
+
+					body.isKinematic = false;
+				}
 			}	
 
 		} else {
+
+			//Find the player!
 			playerAction = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<PlayerAction> ();
+			playerBody = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<Rigidbody2D>();
 		}
 
 	}
+
+
+	void OnCollisionStay2D (Collision2D aCollision){
+		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
+		
+		if (playerStat != null) {
+			if (playerAction != null) {
+				isActioning = playerAction.getIsActioning ();
+				if (isActioning) {
+					isBeingDragged = true;
+				} 
+			}
+		}
+	}
+
 
 	void OnCollisionEnter2D(Collision2D aCollision){
 
@@ -53,8 +84,6 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 
 		if (playerStat != null) {
 
-
-			isBeingPushed = true;
 			direction = ((this.transform.position) - (aCollision.gameObject.transform.position));
 
 			float x = (direction.x);
@@ -73,21 +102,4 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 			direction = new Vector2 (x,y);
 		}
 	}
-
-
-	void OnCollisionExit2D (Collision2D aCollision){
-	
-
-		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
-		
-		if (playerStat != null) {
-
-				isBeingPushed = false;
-				isBeingPulled = false;
-
-			//If we want a harder stop
-			//body.velocity = Vector2.zero;
-		}
-	}
-
 }
