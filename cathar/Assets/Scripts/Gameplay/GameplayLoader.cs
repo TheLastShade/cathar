@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameplayLoader : MonoBehaviour {
 
@@ -40,6 +41,8 @@ public class GameplayLoader : MonoBehaviour {
 			Debug.LogError("Map must have a Map Info Script on it");
 			return;
 		}
+
+		mapInfo.LoadGpi ();
 
 		m_FollowCamera.m_TopLeftLimit = mapInfo.m_CameraTopLeft;
 		m_FollowCamera.m_BottomRightLimit = mapInfo.m_CameraBottomRight;
