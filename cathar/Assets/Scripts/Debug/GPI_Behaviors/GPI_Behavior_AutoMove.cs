@@ -22,8 +22,10 @@ public class GPI_Behavior_AutoMove : MonoBehaviour {
 	void AdjustSpeed(){
 		if (isHorizontal) {
 			body.velocity = (new Vector2 (speed, 0));
+			body.constraints = (RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation);
 		} else {
 			body.velocity = (new Vector2 (0,speed));
+			body.constraints = (RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation);
 		}
 	}
 
