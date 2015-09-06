@@ -9,36 +9,41 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 	int speed = 50000;
 	Vector2 direction;
 	bool isActioning = false;
-	GameObject player;
+	PlayerAction playerAction;
 
 	void Start(){
 		body = this.GetComponent<Rigidbody2D> ();
-		player = GameObject.FindGameObjectWithTag("Player");
+		//playerAction = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<PlayerAction> ();
 	}
 
 	void Update(){
 
-		isActioning = player.gameObject.GetComponentInParent<PlayerAction>().getIsActioning();
+		if (playerAction != null) {
+			isActioning = playerAction.getIsActioning ();
+			
+			if (isActioning && isBeingPushed) {
+				isBeingPulled = true;
+				isBeingPushed = false;
+			} 
+			
+			if (!isActioning && isBeingPulled) {
+				isBeingPulled = false;
+				isBeingPushed = true;
+			}
+			
+			if (isBeingPushed) {
+				body.AddForce (direction * speed);
+			}
+			
+			if (isBeingPulled) {
+				//body.AddForce(-direction * speed);
+				//Create a hingejoint?
+				SpringJoint2D springJoint = gameObject.AddComponent<SpringJoint2D> () as SpringJoint2D;
+			}	
 
-		if (isActioning && isBeingPushed){
-			isBeingPulled = true;
-			isBeingPushed = false;
-		} 
-
-		if (!isActioning && isBeingPulled) {
-			isBeingPulled = false;
-			isBeingPushed = true;
+		} else {
+			playerAction = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<PlayerAction> ();
 		}
-
-		if (isBeingPushed) {
-			body.AddForce(direction * speed);
-		}
-
-		if (isBeingPulled) {
-			body.AddForce(-direction * speed);
-		}
-
-
 
 	}
 
