@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552316d5edeb93d42ae63b333ba68216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MagnitureMultiplicator: 1
+  m_MagnitureMultiplicator: .5
   m_MagnitureMin: .100000001
   m_MagnitureMax: 1
   m_Animator: {fileID: 1469288954}
