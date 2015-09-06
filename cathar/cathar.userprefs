@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Debug\GPI_Behaviors\GPI_Behavior_AutoMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Debug\GPI_Behaviors\GPI_Behavior_Destructable.cs">
     <Files>
-      <File FileName="Assets\Scripts\Debug\GPI_Behaviors\GPI_Behavior_AutoMove.cs" Line="25" Column="102" />
+      <File FileName="Assets\Scripts\Debug\GPI_Behaviors\GPI_Behavior_Destructable.cs" Line="26" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

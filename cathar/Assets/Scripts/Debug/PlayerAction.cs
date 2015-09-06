@@ -14,8 +14,6 @@ public class PlayerAction : MonoBehaviour {
 		} else {
 			this.isActioning = false;
 		}
-
-
 	}
 
 	public bool getIsActioning(){

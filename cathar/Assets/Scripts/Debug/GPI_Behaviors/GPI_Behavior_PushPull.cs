@@ -5,7 +5,6 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 
 	bool isBeingDragged = false;
 	Rigidbody2D body;
-	int speed = 20;
 	Vector2 direction;
 	bool isActioning = false;
 	PlayerAction playerAction;
@@ -15,7 +14,6 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 	void Start(){
 		body = this.GetComponent<Rigidbody2D> ();
 		body.isKinematic = true;
-		//body.constraints = RigidbodyConstraints2D.FreezeAll;
 	}
 
 	void Update(){
@@ -28,7 +26,6 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 			if (!isActioning){
 				if (distanceJoint != null){
 					Destroy (distanceJoint);
-					//body.constraints = RigidbodyConstraints2D.FreezeAll;
 				}
 				isBeingDragged = false;
 				body.isKinematic = true;
