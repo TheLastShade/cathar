@@ -37,7 +37,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157788}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 6ff7716736454fa4ab929112821f3ddd, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -54,8 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61f7967b3f3fa744a872524b41710fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: -10
-  modifierThreshold: 2
+  dragModifier: 20
 --- !u!212 &21251316
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1767,7 +1767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3feaf12b5f64042a28cdcadd98b1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 3
+  m_Speed: 20
+  defaultDrag: 10
 --- !u!50 &83728753
 Rigidbody2D:
   serializedVersion: 2
@@ -1776,7 +1777,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 83728750}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -9242,11 +9243,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 483130, guid: 9e4b53d355547eb46ba94bd89579e0f4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.06999993
+      value: 3.08999991
       objectReference: {fileID: 0}
     - target: {fileID: 483130, guid: 9e4b53d355547eb46ba94bd89579e0f4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.98999977
+      value: -6.07000017
       objectReference: {fileID: 0}
     - target: {fileID: 483130, guid: 9e4b53d355547eb46ba94bd89579e0f4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9272,11 +9273,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 21270520, guid: 9e4b53d355547eb46ba94bd89579e0f4, type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300190, guid: 1f55707da71b1c74a98f32b3cc24a920,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e4b53d355547eb46ba94bd89579e0f4, type: 2}
   m_IsPrefabParent: 0
