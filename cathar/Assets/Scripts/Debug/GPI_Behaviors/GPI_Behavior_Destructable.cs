@@ -14,18 +14,30 @@ public class GPI_Behavior_Destructable : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D aCollision){
 		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
-		
-		if (playerStat != null) {
-			ReceiveDamage (1);
+		LifeChanger lifeChanger = aCollision.gameObject.GetComponentInParent<LifeChanger> ();
+
+		if (lifeChanger != null) {
+			ReceiveDamage (lifeChanger.m_QuantityToChange);
 		}
+
 	}
 
+	void OnTriggerEnter2D (Collider2D aCollider){
+		PlayerStat playerStat = aCollider.gameObject.GetComponentInParent<PlayerStat> ();
+		LifeChanger lifeChanger = aCollider.gameObject.GetComponentInParent<LifeChanger> ();
+
+		if (lifeChanger != null) {
+			ReceiveDamage (lifeChanger.m_QuantityToChange);
+		}
+		
+	}
+	
 
 	void ReceiveDamage (int damage){
 		//TODO: handle armor if any: damage -= ?!
 		//TODO: add damagetype if any
 
-		lifePoints -= damage;
+		lifePoints += damage;
 		if (lifePoints <= 0) {
 			Death ();
 		}
