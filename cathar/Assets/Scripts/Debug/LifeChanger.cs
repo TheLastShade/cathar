@@ -10,7 +10,33 @@ public class LifeChanger : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D aCollision) 
 	{
 		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
+		DispatchEventTrigger (playerStat);
 
+	}
+
+	void OnCollisionEnter2D (Collision2D aCollision)
+	{
+		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
+		DispatchEventTrigger (playerStat);
+
+	}
+
+	void OnTriggerExit2D(Collider2D aCollision) 
+	{
+		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
+		KillEventTrigger (playerStat);		
+
+	}
+	
+	void OnCollisionExit2D(Collision2D aCollision) 
+	{
+		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
+		KillEventTrigger (playerStat);		
+
+	}
+
+	void DispatchEventTrigger (PlayerStat playerStat)
+	{
 		if (playerStat != null) 
 		{
 			TryStopLifeChange();
@@ -28,15 +54,16 @@ public class LifeChanger : MonoBehaviour
 		} while(true);
 	}
 	
-	void OnTriggerExit2D(Collider2D aCollision) 
-	{
-		PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
 
+
+	void KillEventTrigger (PlayerStat playerStat)
+	{
 		if (playerStat != null) 
 		{
 			TryStopLifeChange();
 		}
 	}
+
 
 	private void TryStopLifeChange()
 	{
