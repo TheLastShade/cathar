@@ -32838,7 +32838,6 @@ GameObject:
   - 50: {fileID: 1520773096}
   - 61: {fileID: 1520773095}
   - 114: {fileID: 1520773094}
-  - 114: {fileID: 1520773097}
   - 114: {fileID: 1520773099}
   - 61: {fileID: 1520773098}
   m_Layer: 0
@@ -32928,18 +32927,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1520773097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1520773091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!61 &1520773098
 BoxCollider2D:
   m_ObjectHideFlags: 0
