@@ -25,4 +25,5 @@ public class PlayerStat : MonoBehaviour
 		m_CurrentHealth = Math.Min (m_CurrentHealth, m_MaxHealth);
 		OnHealthChanged ();
 	}
+
 }
