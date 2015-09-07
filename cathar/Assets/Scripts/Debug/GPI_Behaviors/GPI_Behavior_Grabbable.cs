@@ -9,7 +9,7 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 	bool isActioning = false;
 	PlayerAction playerAction;
 	Rigidbody2D playerBody;
-	DistanceJoint2D distanceJoint;
+	SpringJoint2D springJoint;
 
 	void Start(){
 		body = this.GetComponent<Rigidbody2D> ();
@@ -24,8 +24,8 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 			isActioning = playerAction.getIsActioning ();
 
 			if (!isActioning){
-				if (distanceJoint != null){
-					Destroy (distanceJoint);
+				if (springJoint != null){
+					Destroy (springJoint);
 					isBeingDragged = false;
 					body.isKinematic = true;
 					this.transform.position = new Vector3 (transform.position.x, transform.position.y, 30);
@@ -38,12 +38,14 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 			if (isBeingDragged) {
 
 				//TODO: Consider making a springjoint instead
-				if (distanceJoint == null) {
+				if (springJoint == null) {
 					this.transform.position = new Vector3 (transform.position.x, transform.position.y, 15);
-					distanceJoint = gameObject.AddComponent<DistanceJoint2D> () as DistanceJoint2D;
-					distanceJoint.connectedBody = playerBody;
-					distanceJoint.distance = 0;
-					distanceJoint.anchor = new Vector2 (0,-0.25f);
+					springJoint = gameObject.AddComponent<SpringJoint2D> () as SpringJoint2D;
+					springJoint.connectedBody = playerBody;
+					springJoint.distance = 0;
+					//springJoint.dampingRatio = 1000;
+					springJoint.frequency = 10;
+					springJoint.anchor = new Vector2 (0,-0.25f);
 					body.isKinematic = false;
 				}
 			}	
