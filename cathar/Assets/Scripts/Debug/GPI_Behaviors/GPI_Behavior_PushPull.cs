@@ -10,10 +10,12 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 	PlayerAction playerAction;
 	Rigidbody2D playerBody;
 	DistanceJoint2D distanceJoint;
+	float defaultZ;
 
 	void Start(){
 		body = this.GetComponent<Rigidbody2D> ();
 		body.isKinematic = true;
+		defaultZ = this.transform.position.z;
 	}
 
 	void Update(){
@@ -29,6 +31,8 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 				}
 				isBeingDragged = false;
 				body.isKinematic = true;
+				this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, defaultZ);
+
 			}
 
 			
@@ -37,8 +41,12 @@ public class GPI_Behavior_PushPull : MonoBehaviour {
 					distanceJoint = gameObject.AddComponent<DistanceJoint2D> () as DistanceJoint2D;
 					distanceJoint.connectedBody = playerBody;
 					distanceJoint.distance = 0;
-					distanceJoint.anchor = -direction / 1.8f;
+					distanceJoint.anchor = -direction / 1.5f;
 					//distanceJoint.enableCollision = true;
+
+					if (direction.y < 0){
+						this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, 5);
+					}
 
 					if (direction.x != 0){
 						body.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;

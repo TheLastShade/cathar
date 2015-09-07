@@ -74,11 +74,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 444104}
   - 50: {fileID: 5013478}
+  - 114: {fileID: 11422680}
   - 114: {fileID: 11404870}
   - 114: {fileID: 11406926}
   - 114: {fileID: 11414540}
   - 114: {fileID: 11492644}
-  - 114: {fileID: 11469708}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -165,8 +165,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00100000005, y: -.0670000017, z: 0}
-  m_LocalScale: {x: .102117933, y: .0826878548, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 444104}
   m_RootOrder: 0
@@ -192,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 174542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .125000387, y: .162499383, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 469732}
   m_RootOrder: 1
@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.000600000028, y: -.0715000033, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .0375000127, y: .118125565, z: 1}
   m_Children: []
   m_Father: {fileID: 417276}
@@ -234,7 +234,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.21000004, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
 --- !u!61 &6123982
@@ -249,7 +249,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .25999999, y: .5}
 --- !u!61 &6161192
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -260,9 +260,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -.170000002}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .200000003, y: .189999998}
 --- !u!95 &9597024
 Animator:
   serializedVersion: 3
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552316d5edeb93d42ae63b333ba68216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MagnitureMultiplicator: 1
+  m_MagnitureMultiplicator: .5
   m_MagnitureMin: .100000001
   m_MagnitureMax: 1
   m_Animator: {fileID: 9597024}
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxHealth: 128
   m_CurrentHealth: 128
-  m_MovementSpeed: 60
+  m_MovementSpeed: 50
   m_MovementDrag: 20
 --- !u!114 &11414540
 MonoBehaviour:
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAttacking: 0
---- !u!114 &11469708
+--- !u!114 &11422680
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -380,7 +380,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 516f70b2ff4e4664c9520179a6f2f3e0, type: 3}
+  m_Sprite: {fileID: 21300010, guid: 6b26241143ae8184b84345518b9e7d2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21291662
 SpriteRenderer:
@@ -417,7 +417,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_MovementSpeed
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_MovementDrag
