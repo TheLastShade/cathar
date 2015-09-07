@@ -6,7 +6,7 @@ public class GameplayLoader : MonoBehaviour {
 
 	public bool m_LoadMap = true;
 	public bool m_LoadMapGPI = true;
-	public GameObject m_MapToLoad;
+	public string m_MapToLoad;
 	
 	public bool m_LoadCharacter = true;
 	public GameObject m_CharacterToLoad;
@@ -32,7 +32,7 @@ public class GameplayLoader : MonoBehaviour {
 
 	IEnumerator LoadGameplay (){
 		if (m_LoadMap) {
-			SetupMap (Instantiate (m_MapToLoad));
+			SetupMap ();
 		}
 
 		GameObject character = null;
@@ -47,12 +47,14 @@ public class GameplayLoader : MonoBehaviour {
 		yield return 0;
 	}
 
-	void SetupMap (GameObject aMapInstantiated)
+	void SetupMap ()
 	{
-		MapInfo mapInfo = aMapInstantiated.GetComponent<MapInfo> ();
+		MapImporter mapImporter = gameObject.AddComponent<MapImporter> ();
+
+		MapInfo mapInfo = mapImporter.LoadMap (m_MapToLoad);
 
 		if (mapInfo == null) {
-			Debug.LogError("Map must have a Map Info Script on it");
+			Debug.LogError("Error while loading the map");
 			return;
 		}
 

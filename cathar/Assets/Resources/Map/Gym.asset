@@ -3150,7 +3150,9 @@ MonoBehaviour:
     m_Sprite: {fileID: 21300038, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
   m_CameraLimitDataInfo:
   - m_Type: 0
+    m_Position: {x: -2.92799997, y: .56099999, z: 0}
   - m_Type: 1
+    m_Position: {x: 20.0960007, y: -14.5500002, z: 0}
   m_ColliderDataInfo:
   - m_Position: {x: 8.47999954, y: .829999983, z: 0}
     m_Scale: {x: 25.4959888, y: 1, z: 1}

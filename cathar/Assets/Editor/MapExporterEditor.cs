@@ -5,7 +5,6 @@ using UnityEditor;
 [CustomEditor(typeof(MapExporter))]
 public class MapExporterEditor : Editor {
 
-	const string PATH_MAP_EXPORT = "Assets/Resources/Map/";
 
 	public override void OnInspectorGUI ()
 	{
@@ -48,7 +47,7 @@ public class MapExporterEditor : Editor {
 			aMapDataSO.m_GroundDataInfo.Add (typedExporter.ToGroundDataInfo ());
 		} else if (aBaseExporter is CameraLimitExporter) {
 			CameraLimitExporter typedExporter = (CameraLimitExporter)aBaseExporter;
-			aMapDataSO.m_CameraLimitDataInfo.Add (typedExporter.m_CameraLimitDataInfo);
+			aMapDataSO.m_CameraLimitDataInfo.Add (typedExporter.ToCameraLimitDataInfo());
 		} else if (aBaseExporter is ColliderExporter) {
 			ColliderExporter typedExporter = (ColliderExporter)aBaseExporter;
 			aMapDataSO.m_ColliderDataInfo.Add (typedExporter.ToColliderDataInfo());
@@ -69,12 +68,12 @@ public class MapExporterEditor : Editor {
 	MapDataSO GetOrCreateMapDataSO()
 	{
 		MapExporter mapExporter = (MapExporter)target;
-		MapDataSO mapDataSO = (MapDataSO)AssetDatabase.LoadAssetAtPath (PATH_MAP_EXPORT + mapExporter.m_MapName, typeof(MapDataSO));
+		MapDataSO mapDataSO = (MapDataSO)AssetDatabase.LoadAssetAtPath (ResourcePaths.GetMapPathFromAssets(mapExporter.m_MapName), typeof(MapDataSO));
 
 		if(mapDataSO == null){
 			mapDataSO = ScriptableObject.CreateInstance<MapDataSO> ();
 			
-			AssetDatabase.CreateAsset (mapDataSO, PATH_MAP_EXPORT + mapExporter.m_MapName + ".asset");
+			AssetDatabase.CreateAsset (mapDataSO, ResourcePaths.GetMapPathFromAssets(mapExporter.m_MapName) + ".asset");
 			
 			AssetDatabase.SaveAssets ();
 			AssetDatabase.Refresh();

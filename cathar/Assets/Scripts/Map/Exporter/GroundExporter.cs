@@ -23,7 +23,7 @@ public class GroundExporter : BaseExporter {
 		data.m_Sprite = GetComponent<SpriteRenderer> ().sprite;
 		data.m_Position = transform.localPosition;
 		data.m_Scale = transform.localScale;
-		data.m_Rotation = transform.rotation;
+		data.m_Rotation = transform.localRotation;
 
 		return data;
 	}

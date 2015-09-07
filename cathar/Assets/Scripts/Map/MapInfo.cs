@@ -15,9 +15,11 @@ public class MapInfo : MonoBehaviour {
 		gpiContainer.name = "GpiContainer";
 		gpiContainer.transform.SetParent (transform, false);
 
-		foreach (GameObject gpi in m_ListGpi) {
-			GameObject instanceGpi = Instantiate (gpi);
-			instanceGpi.transform.SetParent(gpiContainer.transform, true);
+		if (m_ListGpi != null) {
+			foreach (GameObject gpi in m_ListGpi) {
+				GameObject instanceGpi = Instantiate (gpi);
+				instanceGpi.transform.SetParent(gpiContainer.transform, true);
+			}
 		}
 	}
 }

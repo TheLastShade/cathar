@@ -25853,8 +25853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a415708c2c3c5f43a9fef4dfe97048b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CameraLimitDataInfo:
-    m_Type: 0
+  m_CameraLimitType: 0
 --- !u!114 &11416132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -32214,8 +32213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a415708c2c3c5f43a9fef4dfe97048b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CameraLimitDataInfo:
-    m_Type: 1
+  m_CameraLimitType: 1
 --- !u!114 &11488792
 MonoBehaviour:
   m_ObjectHideFlags: 1
