@@ -22,13 +22,30 @@ public class HealthSystem : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		StartCoroutine (WaitingCharacter());
+	}
+
+	IEnumerator WaitingCharacter ()
+	{
+		do {
+			yield return 0;
+			GameObject playerGO = GameObject.FindGameObjectWithTag ("Player");
+			if(playerGO != null)
+			{
+				m_PlayerStat = playerGO.GetComponentInParent<PlayerStat> ();
+
+			}
+		} while(m_PlayerStat == null);
+		
 		m_PlayerStat.OnHealthChanged += OnHealthChanged;
 		OnHealthChanged ();
 	}
 
 	void OnDestroy()
 	{
-		m_PlayerStat.OnHealthChanged -= OnHealthChanged;
+		if (m_PlayerStat != null) {
+			m_PlayerStat.OnHealthChanged -= OnHealthChanged;
+		}
 
 	}
 

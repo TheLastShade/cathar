@@ -22,11 +22,15 @@ public class InputManager : ManagerBase<InputManager>
 
 	public float Input_Attack {get {return m_Attack;}}
 	public float Input_Action {get {return m_Action;}}
-
+	
+	protected override void CallMakeSingleton ()
+	{
+		MakeSingleton (this);
+	}
+	
 	public override void PreInit ()
 	{
 		base.PreInit ();
-		MakeSingleton (this);
 	}
 	public override void PostInit ()
 	{

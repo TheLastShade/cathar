@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManagerBase<T> : ManagerInitializer where T : ManagerInitializer {
+abstract public class ManagerBase<T> : ManagerInitializer where T : ManagerInitializer {
 
 	static private T m_Instance;
 
@@ -11,4 +11,11 @@ public class ManagerBase<T> : ManagerInitializer where T : ManagerInitializer {
 	{
 		m_Instance = aInstance;
 	}
+
+	void Awake()
+	{
+		CallMakeSingleton ();
+	}
+
+	abstract protected void CallMakeSingleton();
 }

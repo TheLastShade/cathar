@@ -11,6 +11,26 @@ public class ApplicationManager : MonoBehaviour {
 	void Awake()
 	{
 		m_Instance = this;
+
+		DontDestroyOnLoad (gameObject);
+		
+		//We don't want to destroy manager ever, but if we have to, keep this list for later
+		List<ManagerInitializer> listScriptManager = new List<ManagerInitializer>();
+		
+		foreach (GameObject manager in m_ListManager) {
+			ManagerInitializer managerScript = CreateNewManager(manager);
+			if(managerScript != null)
+			{
+				listScriptManager.Add(managerScript);
+			}
+		}
+		
+		foreach (ManagerInitializer managerScript in listScriptManager) {
+			managerScript.PostInit();
+		}
+		
+		m_IsInitialized = true;
+		OnManagersInitialized ();
 	}
 
 	public Action OnManagersInitialized = delegate {};
@@ -20,28 +40,6 @@ public class ApplicationManager : MonoBehaviour {
 	private bool m_IsInitialized = false;
 
 	public bool IsInitialized {get {return m_IsInitialized;}}
-
-	void Start () {
-		DontDestroyOnLoad (gameObject);
-
-		//We don't want to destroy manager ever, but if we have to, keep this list for later
-		List<ManagerInitializer> listScriptManager = new List<ManagerInitializer>();
-
-		foreach (GameObject manager in m_ListManager) {
-			ManagerInitializer managerScript = CreateNewManager(manager);
-			if(managerScript != null)
-			{
-				listScriptManager.Add(managerScript);
-			}
-		}
-
-		foreach (ManagerInitializer managerScript in listScriptManager) {
-			managerScript.PostInit();
-		}
-
-		m_IsInitialized = true;
-		OnManagersInitialized ();
-	}
 
 	ManagerInitializer CreateNewManager (GameObject aManager)
 	{

@@ -20,23 +20,25 @@ public class Follow2DTransform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float tempX = m_ToFollow.position.x;
-		float tempY = m_ToFollow.position.y;
+		if (m_ToFollow != null && m_TopLeftLimit != null && m_BottomRightLimit != null) {
+			float tempX = m_ToFollow.position.x;
+			float tempY = m_ToFollow.position.y;
 
-		float height = m_Camera.orthographicSize;
-		float width = height * m_Camera.aspect;
+			float height = m_Camera.orthographicSize;
+			float width = height * m_Camera.aspect;
 
-		if (m_TopLeftLimit != null) {
-			tempX = Mathf.Max (tempX, (m_TopLeftLimit.position.x+width));
-			tempY = Mathf.Min (tempY, (m_TopLeftLimit.position.y-height));
+			if (m_TopLeftLimit != null) {
+				tempX = Mathf.Max (tempX, (m_TopLeftLimit.position.x + width));
+				tempY = Mathf.Min (tempY, (m_TopLeftLimit.position.y - height));
+			}
+
+			if (m_BottomRightLimit != null) {
+				tempX = Mathf.Min (tempX, (m_BottomRightLimit.position.x - width));
+				tempY = Mathf.Max (tempY, (m_BottomRightLimit.position.y + height));
+			}
+
+			Vector2 newPosition = new Vector2 (tempX, tempY);
+			m_MyTransform.position = newPosition;
 		}
-
-		if (m_BottomRightLimit != null) {
-			tempX = Mathf.Min (tempX, (m_BottomRightLimit.position.x-width));
-			tempY = Mathf.Max (tempY, (m_BottomRightLimit.position.y+height));
-		}
-
-		Vector2 newPosition = new Vector2 (tempX, tempY);
-		m_MyTransform.position = newPosition;
 	}
 }
