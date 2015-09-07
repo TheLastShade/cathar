@@ -6,6 +6,7 @@ public class GPI_Behavior_Destructable : MonoBehaviour {
 	public int lifePoints;
 	public GameObject deathSpawn;
 	public GameObject rewardSpawn;
+	public bool selfDestruct;
 
 	void Update () {
 	
@@ -16,7 +17,10 @@ public class GPI_Behavior_Destructable : MonoBehaviour {
 		//PlayerStat playerStat = aCollision.gameObject.GetComponentInParent<PlayerStat> ();
 		LifeChanger lifeChanger = aCollision.gameObject.GetComponentInParent<LifeChanger> ();
 
-		ReceiveDamage (0);
+		if (selfDestruct) {
+			Death ();
+		}
+
 
 		if (lifeChanger != null) {
 			ReceiveDamage (lifeChanger.m_QuantityToChange);

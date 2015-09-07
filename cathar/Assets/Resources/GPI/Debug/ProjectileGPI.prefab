@@ -86,9 +86,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f563a626c7620a14f965936461a8347c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoints: 0
+  lifePoints: 100
   deathSpawn: {fileID: 122682, guid: 85ff378228f91e94da0dfcae13518748, type: 2}
   rewardSpawn: {fileID: 0}
+  selfDestruct: 1
 --- !u!114 &11490186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +159,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: force
       value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifePoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selfDestruct
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
