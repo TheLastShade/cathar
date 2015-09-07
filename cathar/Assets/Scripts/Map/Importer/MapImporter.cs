@@ -88,7 +88,7 @@ public class MapImporter : MonoBehaviour {
 			colliderGo.transform.SetParent (container.transform, false);
 			
 			colliderGo.AddComponent<BoxCollider2D>();
-			
+			colliderGo.layer = colliderDataInfo.m_Layer;
 			colliderGo.transform.localPosition = colliderDataInfo.m_Position;
 			colliderGo.transform.localScale = colliderDataInfo.m_Scale;
 			colliderGo.transform.localRotation = colliderDataInfo.m_Rotation;
