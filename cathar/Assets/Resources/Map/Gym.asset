@@ -3230,3 +3230,44 @@ MonoBehaviour:
     m_Scale: {x: 1.80202317, y: 1.80202389, z: 1.80202389}
     m_Rotation: {x: 0, y: 0, z: 0, w: 1}
     m_Layer: 9
+  m_SpawnPointDataInfo:
+  - m_Position: {x: 8.81000042, y: -.239999995, z: -500}
+    m_SpawnName: Top
+    m_IsDefault: 0
+  - m_Position: {x: 8.72000027, y: -13.9700003, z: -500}
+    m_SpawnName: Bottom
+    m_IsDefault: 0
+  - m_Position: {x: -2.46000004, y: -6.94000006, z: -500}
+    m_SpawnName: Left
+    m_IsDefault: 0
+  - m_Position: {x: 19.7399998, y: -6.75, z: -500}
+    m_SpawnName: Right
+    m_IsDefault: 0
+  - m_Position: {x: 2.3900001, y: -1.52999997, z: -500}
+    m_SpawnName: Default
+    m_IsDefault: 1
+  m_TeleportDataInfo:
+  - m_Position: {x: 8.63000011, y: .239999995, z: -500}
+    m_Scale: {x: 17.8496056, y: .168054894, z: 1}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Layer: 8
+    m_MapToTeleport: GymSide
+    m_SpawnPointToTeleport: Bottom
+  - m_Position: {x: 8.61999989, y: -14.3699999, z: -500}
+    m_Scale: {x: 18.1120892, y: .168054894, z: 1}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Layer: 8
+    m_MapToTeleport: GymSide
+    m_SpawnPointToTeleport: Top
+  - m_Position: {x: -2.83999991, y: -7.0999999, z: -500}
+    m_Scale: {x: .148569494, y: 11.332448, z: 1}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Layer: 8
+    m_MapToTeleport: GymSide
+    m_SpawnPointToTeleport: Right
+  - m_Position: {x: 20.1000004, y: -6.94999981, z: -500}
+    m_Scale: {x: .148569494, y: 11.487011, z: 1}
+    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+    m_Layer: 8
+    m_MapToTeleport: GymSide
+    m_SpawnPointToTeleport: Left

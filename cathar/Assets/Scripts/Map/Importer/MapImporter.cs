@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class MapImporter : MonoBehaviour {
 
+	
+	const string MAP_NAME = "Map_";
 	const string GROUND_NAME = "Ground_";
 	const string CAMERA_LIMIT_NAME = "CameraLimit_";
 	const string COLLIDER_NAME = "Collider_";
+	const string TELEPORT_NAME = "Teleport_";
+
 
 	[ContextMenu("DebugMapLoad")]
 	public void DebugMapLoad()
@@ -14,25 +19,37 @@ public class MapImporter : MonoBehaviour {
 		LoadMap ("Gym");
 	}
 
-	public MapInfo LoadMap(string aMapName)
+	public void UnloadCurrentMap (MapInfo aMapInfoToUnload)
+	{
+		aMapInfoToUnload.UnLoad ();
+		Destroy (aMapInfoToUnload.gameObject);
+	}
+
+	public MapInfo LoadMap(string  aMapName)
 	{
 		string path = ResourcePaths.GetMapPath (aMapName);
 		MapDataSO mapDataSO = (MapDataSO)Resources.Load(path, typeof(MapDataSO));
 
-		MapInfo mapInfo = gameObject.AddComponent<MapInfo> ();
+		GameObject mapContainer = new GameObject ();
+		mapContainer.name = MAP_NAME + aMapName;
+		mapContainer.transform.SetParent (transform, false);
 
-		CreateGround (mapDataSO.m_GroundDataInfo);
-		CreateCameraLimit (mapDataSO.m_CameraLimitDataInfo, mapInfo);
-		CreateCollider (mapDataSO.m_ColliderDataInfo);
+		MapInfo mapInfo = mapContainer.AddComponent<MapInfo> ();
+
+		CreateGround (mapContainer, mapDataSO.m_GroundDataInfo);
+		CreateCameraLimit (mapContainer, mapDataSO.m_CameraLimitDataInfo, mapInfo);
+		CreateCollider (mapContainer, mapDataSO.m_ColliderDataInfo);
+		mapInfo.m_ListSpawnPoint = mapDataSO.m_SpawnPointDataInfo;
+		CreateTeleport (mapContainer, mapDataSO.m_TeleportDataInfo, mapInfo);
 
 		return mapInfo;
 	}
 
-	void CreateGround (List<GroundDataInfo> aGroundDataInfo)
+	void CreateGround (GameObject mapContainer, List<GroundDataInfo> aGroundDataInfo)
 	{
 		GameObject container = new GameObject ();
 		container.name = "GroundContainer";
-		container.transform.SetParent (transform, false);
+		container.transform.SetParent (mapContainer.transform, false);
 
 		for (int i = 0; i < aGroundDataInfo.Count; i++) {
 			GroundDataInfo groundDataInfo = aGroundDataInfo[i];
@@ -50,11 +67,11 @@ public class MapImporter : MonoBehaviour {
 		}
 	}
 
-	void CreateCameraLimit (List<CameraLimitDataInfo> aCameraLimitDataInfo, MapInfo aMapInfo)
+	void CreateCameraLimit (GameObject mapContainer, List<CameraLimitDataInfo> aCameraLimitDataInfo, MapInfo aMapInfo)
 	{
 		GameObject container = new GameObject ();
 		container.name = "CameraLimitContainer";
-		container.transform.SetParent (transform, false);
+		container.transform.SetParent (mapContainer.transform, false);
 
 		for (int i = 0; i < aCameraLimitDataInfo.Count; i++) {
 			CameraLimitDataInfo cameraLimitDataInfo = aCameraLimitDataInfo[i];
@@ -74,11 +91,11 @@ public class MapImporter : MonoBehaviour {
 		}
 	}
 
-	void CreateCollider (List<ColliderDataInfo> aColliderDataInfo)
+	void CreateCollider (GameObject mapContainer, List<ColliderDataInfo> aColliderDataInfo)
 	{
 		GameObject container = new GameObject ();
 		container.name = "ColliderContainer";
-		container.transform.SetParent (transform, false);
+		container.transform.SetParent (mapContainer.transform, false);
 		
 		for (int i = 0; i < aColliderDataInfo.Count; i++) {
 			ColliderDataInfo colliderDataInfo = aColliderDataInfo[i];
@@ -94,4 +111,33 @@ public class MapImporter : MonoBehaviour {
 			colliderGo.transform.localRotation = colliderDataInfo.m_Rotation;
 		}
 	}
+
+	void CreateTeleport (GameObject mapContainer, List<TeleportDataInfo> a_TeleportDataInfo, MapInfo aMapInfo)
+	{
+		GameObject container = new GameObject ();
+		container.name = "TeleportContainer";
+		container.transform.SetParent (mapContainer.transform, false);
+		
+		for (int i = 0; i < a_TeleportDataInfo.Count; i++) {
+			TeleportDataInfo teleportDataInfo = a_TeleportDataInfo[i];
+			
+			GameObject teleportGo = new GameObject ();
+			teleportGo.name = TELEPORT_NAME+i;
+			teleportGo.transform.SetParent (container.transform, false);
+			
+			BoxCollider2D boxCollider = teleportGo.AddComponent<BoxCollider2D>();
+			boxCollider.isTrigger = true;
+			teleportGo.layer = teleportDataInfo.m_Layer;
+			teleportGo.transform.localPosition = teleportDataInfo.m_Position;
+			teleportGo.transform.localScale = teleportDataInfo.m_Scale;
+			teleportGo.transform.localRotation = teleportDataInfo.m_Rotation;
+
+			MapTeleport mapTeleport = teleportGo.AddComponent<MapTeleport>();
+			mapTeleport.m_MapToTeleport = teleportDataInfo.m_MapToTeleport;
+			mapTeleport.m_SpawnPointToTeleport = teleportDataInfo.m_SpawnPointToTeleport;
+
+			aMapInfo.RegisterTeleportEvent(mapTeleport);
+		}
+	}
+
 }

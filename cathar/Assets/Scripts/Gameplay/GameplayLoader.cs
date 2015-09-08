@@ -4,20 +4,26 @@ using System.Collections.Generic;
 
 public class GameplayLoader : MonoBehaviour {
 
-	public bool m_LoadMap = true;
 	public bool m_LoadMapGPI = true;
-	public string m_MapToLoad;
-	
-	public bool m_LoadCharacter = true;
-	public GameObject m_CharacterToLoad;
 
-	public bool m_LoadUI = true;
+	public bool m_IsLoadingMap = true;
+	public string m_MapToLoad;
+	public GameObject m_CharacterToLoad;
 	public GameObject m_UIToLoad;
 
 	public Follow2DTransform m_FollowCamera;
 
+	private MapInfo m_CurrentMapInfo;
+	private MapImporter m_MapImporter;
+
+	private bool m_IsLoading = true;
+	private GameObject m_Character = null;
+
 	// Use this for initialization
 	void Start () {
+		
+		m_MapImporter = gameObject.AddComponent<MapImporter> ();
+
 		if (ApplicationManager.Instance.IsInitialized) {
 			OnManagersInitlized();
 		} else {
@@ -31,39 +37,39 @@ public class GameplayLoader : MonoBehaviour {
 	}
 
 	IEnumerator LoadGameplay (){
-		if (m_LoadMap) {
-			SetupMap ();
+		if (m_IsLoadingMap) {
+			SetupMap (m_MapToLoad);
 		}
 
-		GameObject character = null;
-		if (m_LoadCharacter) {
-			character = SetupCharacter(Instantiate (m_CharacterToLoad));
-		}
+		m_Character = SetupCharacter(Instantiate (m_CharacterToLoad));
+		PlaceCharacter();
 
 		if (m_UIToLoad) {
-			SetupHealth(Instantiate (m_UIToLoad), character);
+			SetupHealth(Instantiate (m_UIToLoad));
 		}
 
 		yield return 0;
+
+		m_IsLoading = false;
 	}
 
-	void SetupMap ()
+	void SetupMap (string aMapToLoad)
 	{
-		MapImporter mapImporter = gameObject.AddComponent<MapImporter> ();
+		m_CurrentMapInfo = m_MapImporter.LoadMap (aMapToLoad);
 
-		MapInfo mapInfo = mapImporter.LoadMap (m_MapToLoad);
-
-		if (mapInfo == null) {
+		if (m_CurrentMapInfo == null) {
 			Debug.LogError("Error while loading the map");
 			return;
 		}
+		
+		m_CurrentMapInfo.OnTriggerTeleport += OnTriggerTeleport;
 
 		if (m_LoadMapGPI) {
-			mapInfo.LoadGpi ();
+			m_CurrentMapInfo.LoadGpi ();
 		}
 
-		m_FollowCamera.m_TopLeftLimit = mapInfo.m_CameraTopLeft;
-		m_FollowCamera.m_BottomRightLimit = mapInfo.m_CameraBottomRight;
+		m_FollowCamera.m_TopLeftLimit = m_CurrentMapInfo.m_CameraTopLeft;
+		m_FollowCamera.m_BottomRightLimit = m_CurrentMapInfo.m_CameraBottomRight;
 	}
 
 	GameObject SetupCharacter (GameObject aCharacterInstantiated)
@@ -73,9 +79,44 @@ public class GameplayLoader : MonoBehaviour {
 		return aCharacterInstantiated;
 	}
 
-	void SetupHealth (GameObject aHealthUI, GameObject aCharacterInstantiated)
+	void PlaceCharacter (string aSpawnPointName = null)
+	{
+		Vector3 position = Vector3.zero;
+		if (m_CurrentMapInfo != null) {
+			position = m_CurrentMapInfo.GetSpawnPoint (aSpawnPointName);
+		}
+		position = new Vector3 (position.x, position.y, m_Character.transform.localPosition.z);
+		m_Character.transform.localPosition = position;
+	}
+
+	void SetupHealth (GameObject aHealthUI)
 	{
 		HealthSystem healthSystem = aHealthUI.GetComponentInChildren<HealthSystem> ();
-		healthSystem.m_PlayerStat = aCharacterInstantiated.GetComponent<PlayerStat> ();
+		healthSystem.m_PlayerStat = m_Character.GetComponent<PlayerStat> ();
 	}
+
+	void OnTriggerTeleport (string aMapToLoad, string aSpawnPoint)
+	{
+		if (!m_IsLoading) {
+			StartCoroutine(LoadNewMap(aMapToLoad, aSpawnPoint));
+		}
+
+	}
+
+	IEnumerator LoadNewMap (string aMapToLoad, string aSpawnPoint)
+	{
+		m_IsLoading = true;
+
+		m_CurrentMapInfo.OnTriggerTeleport -= OnTriggerTeleport;
+		m_MapImporter.UnloadCurrentMap (m_CurrentMapInfo);
+		m_CurrentMapInfo = null;
+
+		SetupMap (aMapToLoad);
+		PlaceCharacter (aSpawnPoint);
+
+		yield return 0;
+		m_IsLoading = false;
+	}
+
+
 }

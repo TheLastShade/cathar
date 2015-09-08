@@ -51,6 +51,12 @@ public class MapExporterEditor : Editor {
 		} else if (aBaseExporter is ColliderExporter) {
 			ColliderExporter typedExporter = (ColliderExporter)aBaseExporter;
 			aMapDataSO.m_ColliderDataInfo.Add (typedExporter.ToColliderDataInfo());
+		} else if (aBaseExporter is SpawnPointExporter) {
+			SpawnPointExporter typedExporter = (SpawnPointExporter)aBaseExporter;
+			aMapDataSO.m_SpawnPointDataInfo.Add (typedExporter.ToSpawnPointDataInfo());
+		} else if (aBaseExporter is TeleportExporter) {
+			TeleportExporter typedExporter = (TeleportExporter)aBaseExporter;
+			aMapDataSO.m_TeleportDataInfo.Add (typedExporter.ToTeleportDataInfo());
 		} else {
 			Debug.LogError("UnHandled Type of Exporter :: Name =" +aBaseExporter.name + " :: TypeOf =" + aBaseExporter.GetType());
 		}
