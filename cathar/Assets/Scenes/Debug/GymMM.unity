@@ -124,17 +124,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410002, guid: 3d0d900fcbac2ce49b85a087310d702e, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .707106829
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 410002, guid: 3d0d900fcbac2ce49b85a087310d702e, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .707106709
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 410002, guid: 3d0d900fcbac2ce49b85a087310d702e, type: 2}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6175246, guid: 3d0d900fcbac2ce49b85a087310d702e, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492560, guid: 3d0d900fcbac2ce49b85a087310d702e, type: 2}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -264,12 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f95ce78fbe9ac44b93fd38dd490a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoadMap: 1
   m_LoadMapGPI: 0
+  m_IsLoadingMap: 1
   m_MapToLoad: Gym
-  m_LoadCharacter: 1
   m_CharacterToLoad: {fileID: 163670, guid: 5994468bb2b4dad4d97ab2639f8c8db1, type: 2}
-  m_LoadUI: 1
   m_UIToLoad: {fileID: 167378, guid: bade7e6e8ca62be4f9e1719fe10df1fa, type: 2}
   m_FollowCamera: {fileID: 867869959}
 --- !u!4 &763033940
@@ -376,6 +378,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70dea74100470344ba320a734d9282d4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &819253766 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 182550, guid: 3d0d900fcbac2ce49b85a087310d702e, type: 2}
+  m_PrefabInternal: {fileID: 1815774657}
+--- !u!114 &819253771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819253766}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d3981edbb3324498bf652b32f63688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  rotateSpeed: .100000001
 --- !u!1 &867869953
 GameObject:
   m_ObjectHideFlags: 0
