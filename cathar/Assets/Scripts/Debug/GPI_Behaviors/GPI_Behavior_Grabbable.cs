@@ -3,13 +3,18 @@ using System.Collections;
 
 public class GPI_Behavior_Grabbable : MonoBehaviour {
 
+	public bool throwable;
+	public float defaultForce;
+
 	bool isBeingDragged = false;
+	bool isBeingThrown = false;
 	Rigidbody2D body;
 	Vector2 direction;
 	bool isActioning = false;
 	PlayerAction playerAction;
 	Rigidbody2D playerBody;
 	SpringJoint2D springJoint;
+	GameObject player;
 
 	void Start(){
 		body = this.GetComponent<Rigidbody2D> ();
@@ -17,6 +22,14 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 	}
 
 	void Update(){
+
+		if (isBeingThrown) {
+			if (body.velocity.magnitude < 0.1f){
+				isBeingThrown = false;
+				body.isKinematic = true;
+				
+			}
+		}
 
 		if (playerAction != null) {
 
@@ -29,6 +42,11 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 					isBeingDragged = false;
 					body.isKinematic = true;
 					this.transform.position = new Vector3 (transform.position.x, transform.position.y, 30);
+
+					if (throwable){
+						ThrowObject(defaultForce);
+					}
+
 				}
 
 
@@ -48,13 +66,13 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 					springJoint.anchor = new Vector2 (0,-0.25f);
 					body.isKinematic = false;
 				}
-			}	
+			}
 
 		} else {
-
 			//Find the player!
-			playerAction = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<PlayerAction> ();
-			playerBody = GameObject.FindGameObjectWithTag ("Player").gameObject.GetComponentInParent<Rigidbody2D>();
+			player = GameObject.FindGameObjectWithTag("Player");
+			playerAction = player.gameObject.GetComponentInParent<PlayerAction> ();
+			playerBody = player.gameObject.GetComponentInParent<Rigidbody2D>();
 		}
 
 	}
@@ -98,4 +116,14 @@ public class GPI_Behavior_Grabbable : MonoBehaviour {
 			direction = new Vector2 (x,y);
 		}
 	}
+
+	void ThrowObject(float force){
+		body.isKinematic = false;
+		direction = player.transform.up;
+		body.AddForce(direction * defaultForce);
+		isBeingThrown = true;
+		//TODO: Player has no direction currently.
+	}
+
+
 }

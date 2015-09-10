@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6175246}
   - 114: {fileID: 11492560}
   - 114: {fileID: 11484400}
+  - 114: {fileID: 11485624}
   m_Layer: 0
   m_Name: CannonGPI
   m_TagString: Untagged
@@ -55,7 +56,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b72880f9b6aa041a79ea77556c02c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .300000012
+  speed: .5
+--- !u!114 &11485624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182550}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d3981edbb3324498bf652b32f63688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  rotateSpeed: .100000001
 --- !u!114 &11492560
 MonoBehaviour:
   m_ObjectHideFlags: 1
