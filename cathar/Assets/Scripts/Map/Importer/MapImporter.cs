@@ -36,11 +36,11 @@ public class MapImporter : MonoBehaviour {
 
 		MapInfo mapInfo = mapContainer.AddComponent<MapInfo> ();
 
-		CreateGround (mapContainer, mapDataSO.m_GroundDataInfo);
-		CreateCameraLimit (mapContainer, mapDataSO.m_CameraLimitDataInfo, mapInfo);
-		CreateCollider (mapContainer, mapDataSO.m_ColliderDataInfo);
-		mapInfo.m_ListSpawnPoint = mapDataSO.m_SpawnPointDataInfo;
-		CreateTeleport (mapContainer, mapDataSO.m_TeleportDataInfo, mapInfo);
+		CreateGround (mapContainer, mapDataSO.m_MapDataInfo.m_GroundDataInfo);
+		CreateCameraLimit (mapContainer, mapDataSO.m_MapDataInfo.m_CameraLimitDataInfo, mapInfo);
+		CreateCollider (mapContainer, mapDataSO.m_MapDataInfo.m_ColliderDataInfo);
+		mapInfo.m_ListSpawnPoint = mapDataSO.m_MapDataInfo.m_SpawnPointDataInfo;
+		CreateTeleport (mapContainer, mapDataSO.m_MapDataInfo.m_TeleportDataInfo, mapInfo);
 
 		return mapInfo;
 	}

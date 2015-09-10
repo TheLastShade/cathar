@@ -22,44 +22,21 @@ public class MapExporterEditor : Editor {
 
 	void ExportMap ()
 	{
-		//MapDataSO mapDataSO = new MapDataSO ();
-		MapDataSO mapDataSO = GetOrCreateMapDataSO ();
-		mapDataSO.ClearData ();
 		MapExporter mapExporter = (MapExporter)target;
-		BaseExporter[] baseExporter = mapExporter.gameObject.GetComponentsInChildren<BaseExporter> ();
 
-		for (int i = 0; i < baseExporter.Length; i++) {
-			HandleExporter(mapDataSO, baseExporter[i]);
-
+		if (string.IsNullOrEmpty (mapExporter.m_MapName)) {
+			Debug.LogError("Cannot save a map without Name");
+			return;
 		}
+		MapDataSO mapDataSO = GetOrCreateMapDataSO ();
+
+		mapDataSO.m_MapDataInfo = mapExporter.CreateMapDataInfo ();
 
 		//AssetDatabase.AddObjectToAsset (mapDataSO, PATH_MAP_EXPORT);
 		EditorUtility.SetDirty(mapDataSO);
 		AssetDatabase.SaveAssets ();
 		AssetDatabase.Refresh();
 
-	}
-
-	void HandleExporter (MapDataSO aMapDataSO, BaseExporter aBaseExporter)
-	{
-		if (aBaseExporter is GroundExporter) {
-			GroundExporter typedExporter = (GroundExporter)aBaseExporter;
-			aMapDataSO.m_GroundDataInfo.Add (typedExporter.ToGroundDataInfo ());
-		} else if (aBaseExporter is CameraLimitExporter) {
-			CameraLimitExporter typedExporter = (CameraLimitExporter)aBaseExporter;
-			aMapDataSO.m_CameraLimitDataInfo.Add (typedExporter.ToCameraLimitDataInfo());
-		} else if (aBaseExporter is ColliderExporter) {
-			ColliderExporter typedExporter = (ColliderExporter)aBaseExporter;
-			aMapDataSO.m_ColliderDataInfo.Add (typedExporter.ToColliderDataInfo());
-		} else if (aBaseExporter is SpawnPointExporter) {
-			SpawnPointExporter typedExporter = (SpawnPointExporter)aBaseExporter;
-			aMapDataSO.m_SpawnPointDataInfo.Add (typedExporter.ToSpawnPointDataInfo());
-		} else if (aBaseExporter is TeleportExporter) {
-			TeleportExporter typedExporter = (TeleportExporter)aBaseExporter;
-			aMapDataSO.m_TeleportDataInfo.Add (typedExporter.ToTeleportDataInfo());
-		} else {
-			Debug.LogError("UnHandled Type of Exporter :: Name =" +aBaseExporter.name + " :: TypeOf =" + aBaseExporter.GetType());
-		}
 	}
 
 	void SnapGround ()

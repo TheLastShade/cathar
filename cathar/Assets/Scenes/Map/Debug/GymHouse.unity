@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MapName: GymHouse
+  m_ActivatedColliderLayers: []
 --- !u!114 &171243178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993334986e89d04680f8f349e77b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ColliderMapLayer: 
 --- !u!61 &501872848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3055,6 +3057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993334986e89d04680f8f349e77b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ColliderMapLayer: 
 --- !u!61 &1375610331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3176,6 +3179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993334986e89d04680f8f349e77b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ColliderMapLayer: 
 --- !u!61 &1513465559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3506,6 +3510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993334986e89d04680f8f349e77b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ColliderMapLayer: 
 --- !u!61 &1759852990
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3759,6 +3764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993334986e89d04680f8f349e77b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ColliderMapLayer: 
 --- !u!61 &1790414131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4158,6 +4164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993334986e89d04680f8f349e77b6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ColliderMapLayer: 
 --- !u!61 &2015853214
 BoxCollider2D:
   m_ObjectHideFlags: 0

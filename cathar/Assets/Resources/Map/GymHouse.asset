@@ -11,245 +11,254 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eec523d3e9e50646af13a873c2a7d6e, type: 3}
   m_Name: GymHouse
   m_EditorClassIdentifier: 
-  m_GroundDataInfo:
-  - m_Position: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300114, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: 0, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300118, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: .639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300120, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: .639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: 0, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: .639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300124, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: 1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300156, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: 1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: 1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300160, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: 1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: 1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: 1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: .639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: 0, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: 0, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: .639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: .639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: 0, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: -3.83999991, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: -3.83999991, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: -.639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: -1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: -1.91999996, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: -2.55999994, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.91999996, y: -3.20000005, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: -3.20000005, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: -2.55999994, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: -1.91999996, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: -1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 2.55999994, y: -.639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: -.639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: -1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: -1.91999996, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: -2.55999994, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 3.20000005, y: -3.20000005, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: -3.20000005, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: -2.55999994, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: -1.91999996, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: -1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 1.27999997, y: -.639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: -.639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: -1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: -1.91999996, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: -2.55999994, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: .639999986, y: -3.20000005, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: -3.20000005, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: -2.55999994, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: -1.91999996, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: -1.27999997, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  - m_Position: {x: 0, y: -.639999986, z: 0}
-    m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
-  m_CameraLimitDataInfo:
-  - m_Type: 0
-    m_Position: {x: -2.92799997, y: .56099999, z: 0}
-  - m_Type: 1
-    m_Position: {x: 4.15999985, y: -4.82999992, z: 0}
-  m_ColliderDataInfo:
-  - m_Position: {x: 1.50999999, y: .540000021, z: 0}
-    m_Scale: {x: 4.41184711, y: 1.70000052, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 9
-  - m_Position: {x: 1.54999995, y: -4.67999983, z: 0}
-    m_Scale: {x: 1.93156469, y: .99999994, z: .99999994}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 9
-  - m_Position: {x: -.810000002, y: -1.74000001, z: 0}
-    m_Scale: {x: .987500012, y: 3.89091229, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 9
-  - m_Position: {x: 4.01000023, y: -1.64999998, z: 0}
-    m_Scale: {x: 1, y: 4.43781042, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 9
-  - m_Position: {x: -.0199999996, y: -4.23999977, z: 0}
-    m_Scale: {x: 1.93156469, y: 1.42499971, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 9
-  - m_Position: {x: 3.20000005, y: -4.23999977, z: 0}
-    m_Scale: {x: 1.93156469, y: 1.42499971, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 9
-  m_SpawnPointDataInfo:
-  - m_Position: {x: 1.60599995, y: -3.26200008, z: -500}
-    m_SpawnName: Door
-    m_IsDefault: 1
-  m_TeleportDataInfo:
-  - m_Position: {x: 1.597, y: -4.06699991, z: -500}
-    m_Scale: {x: 1.02904904, y: .153750151, z: 1}
-    m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-    m_Layer: 8
-    m_MapToTeleport: GymSide
-    m_SpawnPointToTeleport: House
+  m_MapDataInfo:
+    m_MapName: GymHouse
+    m_ActivatedColliderLayers: []
+    m_GroundDataInfo:
+    - m_Position: {x: 0, y: 0, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300114, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: 0, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300118, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: .639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300120, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: .639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: 0, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: .639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300124, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: 1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300156, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: 1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: 1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300160, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: 1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: 1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: 1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300158, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: .639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: 0, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: 0, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: .639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: .639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300122, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: 0, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300112, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: -3.83999991, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: -3.83999991, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: -.639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: -1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: -1.91999996, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: -2.55999994, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.91999996, y: -3.20000005, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: -3.20000005, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: -2.55999994, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: -1.91999996, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: -1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 2.55999994, y: -.639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: -.639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: -1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: -1.91999996, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: -2.55999994, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 3.20000005, y: -3.20000005, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: -3.20000005, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: -2.55999994, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: -1.91999996, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: -1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 1.27999997, y: -.639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: -.639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: -1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: -1.91999996, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: -2.55999994, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: .639999986, y: -3.20000005, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: -3.20000005, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: -2.55999994, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: -1.91999996, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: -1.27999997, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    - m_Position: {x: 0, y: -.639999986, z: 0}
+      m_Scale: {x: 1.01199996, y: 1.01199996, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Sprite: {fileID: 21300248, guid: 1f55707da71b1c74a98f32b3cc24a920, type: 3}
+    m_CameraLimitDataInfo:
+    - m_Type: 0
+      m_Position: {x: -2.92799997, y: .56099999, z: 0}
+    - m_Type: 1
+      m_Position: {x: 4.15999985, y: -4.82999992, z: 0}
+    m_ColliderDataInfo:
+    - m_Position: {x: 1.50999999, y: .540000021, z: 0}
+      m_Scale: {x: 4.41184711, y: 1.70000052, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: 1.54999995, y: -4.67999983, z: 0}
+      m_Scale: {x: 1.93156469, y: .99999994, z: .99999994}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: -.810000002, y: -1.74000001, z: 0}
+      m_Scale: {x: .987500012, y: 3.89091229, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: 4.01000023, y: -1.64999998, z: 0}
+      m_Scale: {x: 1, y: 4.43781042, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: -.0199999996, y: -4.23999977, z: 0}
+      m_Scale: {x: 1.93156469, y: 1.42499971, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: 3.20000005, y: -4.23999977, z: 0}
+      m_Scale: {x: 1.93156469, y: 1.42499971, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    m_SpawnPointDataInfo:
+    - m_Position: {x: 1.60599995, y: -3.26200008, z: -500}
+      m_SpawnName: Door
+      m_IsDefault: 1
+    m_TeleportDataInfo:
+    - m_Position: {x: 1.597, y: -4.06699991, z: -500}
+      m_Scale: {x: 1.02904904, y: .153750151, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 8
+      m_MapToTeleport: GymSide
+      m_SpawnPointToTeleport: House
