@@ -8,16 +8,13 @@ public class GPI_Behavior_Homing : MonoBehaviour {
 	private GameObject player;
 
 	
-	// Update is called once per frame
 	void Update () {
-	
 		if (player == null) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 		} else {
-
-			Quaternion rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.TransformDirection(Vector3.up));
-			transform.rotation = new Quaternion (0,0,rotation.z, rotation.w);
-
+			Vector2 dir = transform.position;
+			float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 		}
 
 	}
