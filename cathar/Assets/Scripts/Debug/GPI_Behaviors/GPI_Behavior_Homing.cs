@@ -12,9 +12,10 @@ public class GPI_Behavior_Homing : MonoBehaviour {
 		if (player == null) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 		} else {
-			Vector2 dir = transform.position;
-			float angle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+			Vector3 diff = player.transform.position - transform.position;
+			diff.Normalize();
+			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 		}
 
 	}
