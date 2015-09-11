@@ -9,7 +9,9 @@ public class GPI_Behavior_Bumper : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D aCollision){
 		Rigidbody2D newBody = aCollision.gameObject.GetComponentInParent<Rigidbody2D> ();
 		if (newBody != null) {
-			newBody.AddForce(-(this.transform.position - newBody.transform.position) * force);
+			Vector2 applyForce = newBody.transform.position - this.transform.position;
+			applyForce.Normalize ();
+			newBody.AddForce(applyForce * force);
 
 			if (isHurting){
 				//call for a specific anim?
