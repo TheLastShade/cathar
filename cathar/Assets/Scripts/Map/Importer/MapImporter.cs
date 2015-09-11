@@ -38,7 +38,7 @@ public class MapImporter : MonoBehaviour {
 
 		CreateGround (mapContainer, mapDataSO.m_MapDataInfo.m_GroundDataInfo);
 		CreateCameraLimit (mapContainer, mapDataSO.m_MapDataInfo.m_CameraLimitDataInfo, mapInfo);
-		CreateCollider (mapContainer, mapDataSO.m_MapDataInfo.m_ColliderDataInfo);
+		CreateCollider (mapContainer, mapDataSO.m_MapDataInfo.m_ColliderDataInfo, mapInfo, mapDataSO.m_MapDataInfo.m_ActivatedColliderLayers);
 		mapInfo.m_ListSpawnPoint = mapDataSO.m_MapDataInfo.m_SpawnPointDataInfo;
 		CreateTeleport (mapContainer, mapDataSO.m_MapDataInfo.m_TeleportDataInfo, mapInfo);
 
@@ -91,7 +91,7 @@ public class MapImporter : MonoBehaviour {
 		}
 	}
 
-	void CreateCollider (GameObject mapContainer, List<ColliderDataInfo> aColliderDataInfo)
+	void CreateCollider (GameObject mapContainer, List<ColliderDataInfo> aColliderDataInfo, MapInfo aMapInfo, List<string> aActivatedColliderLayers)
 	{
 		GameObject container = new GameObject ();
 		container.name = "ColliderContainer";
@@ -109,6 +109,15 @@ public class MapImporter : MonoBehaviour {
 			colliderGo.transform.localPosition = colliderDataInfo.m_Position;
 			colliderGo.transform.localScale = colliderDataInfo.m_Scale;
 			colliderGo.transform.localRotation = colliderDataInfo.m_Rotation;
+
+			MapColliderLayer mapColliderLayer = colliderGo.AddComponent<MapColliderLayer>();
+			mapColliderLayer.m_ColliderLayer = colliderDataInfo.m_ColliderMapLayer;
+
+			aMapInfo.m_ListMapColliderLayer.Add(mapColliderLayer);
+			if(!string.IsNullOrEmpty(colliderDataInfo.m_ColliderMapLayer) && !aActivatedColliderLayers.Contains(colliderDataInfo.m_ColliderMapLayer)){
+				colliderGo.SetActive(false);
+			}
+			
 		}
 	}
 

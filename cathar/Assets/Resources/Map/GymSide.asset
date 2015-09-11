@@ -761,13 +761,33 @@ MonoBehaviour:
       m_Rotation: {x: 0, y: 0, z: 0, w: 1}
       m_Layer: 9
       m_ColliderMapLayer: 
-    - m_Position: {x: -7.58300018, y: -1.91100001, z: 0}
-      m_Scale: {x: .470208406, y: 1.9431355, z: 1.02414215}
+    - m_Position: {x: -7.6789999, y: -.992999971, z: 0}
+      m_Scale: {x: .641361356, y: .0642303824, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: -5.13000011, y: -.992999971, z: 0}
+      m_Scale: {x: .641361356, y: .0642303824, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: -5.13000011, y: -2.85100007, z: 0}
+      m_Scale: {x: .641361356, y: .0642303824, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: -7.6789999, y: -2.85100007, z: 0}
+      m_Scale: {x: .641361356, y: .0642303824, z: 1}
+      m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+      m_Layer: 9
+      m_ColliderMapLayer: 
+    - m_Position: {x: -7.454, y: -1.91100001, z: 0}
+      m_Scale: {x: .172140464, y: 1.9431355, z: 1.02414215}
       m_Rotation: {x: 0, y: 0, z: 0, w: 1}
       m_Layer: 9
       m_ColliderMapLayer: LayerGround
-    - m_Position: {x: -5.20300007, y: -1.91100001, z: 0}
-      m_Scale: {x: .470208406, y: 1.9431355, z: 1.02414215}
+    - m_Position: {x: -5.34700012, y: -1.91100001, z: 0}
+      m_Scale: {x: .189111888, y: 1.9431355, z: 1.02414215}
       m_Rotation: {x: 0, y: 0, z: 0, w: 1}
       m_Layer: 9
       m_ColliderMapLayer: LayerGround
@@ -784,7 +804,7 @@ MonoBehaviour:
     m_SpawnPointDataInfo:
     - m_Position: {x: 1.27499998, y: -3.19199991, z: 0}
       m_SpawnName: House
-      m_IsDefault: 1
+      m_IsDefault: 0
     - m_Position: {x: 3.71300006, y: -1.99300003, z: 0}
       m_SpawnName: Right
       m_IsDefault: 0
@@ -797,6 +817,9 @@ MonoBehaviour:
     - m_Position: {x: -2.77999997, y: -4.1500001, z: 0}
       m_SpawnName: Bottom
       m_IsDefault: 0
+    - m_Position: {x: -3.28999996, y: -2.06999993, z: 0}
+      m_SpawnName: Default
+      m_IsDefault: 1
     m_TeleportDataInfo:
     - m_Position: {x: 4.06599998, y: -2.20099998, z: 0}
       m_Scale: {x: .148569494, y: 4.12089062, z: 1}

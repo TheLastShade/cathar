@@ -9,6 +9,8 @@ public class MapInfo : MonoBehaviour {
 	public Transform m_CameraTopLeft;
 	public Transform m_CameraBottomRight;
 
+	public List<MapColliderLayer> m_ListMapColliderLayer = new List<MapColliderLayer>();
+
 	public List<SpawnPointDataInfo> m_ListSpawnPoint;
 
 	public List<GameObject> m_ListGpi;
@@ -20,6 +22,7 @@ public class MapInfo : MonoBehaviour {
 		foreach (MapTeleport mapTeleport in m_ListMapTeleport) {
 			mapTeleport.OnTriggerTeleport -= OnTriggerTeleport_Internal;
 		}
+		m_ListMapColliderLayer = null;
 	}
 
 	public void LoadGpi()
@@ -72,5 +75,17 @@ public class MapInfo : MonoBehaviour {
 	void OnTriggerTeleport_Internal (string aMapToLoad, string aSpawnPoint)
 	{
 		OnTriggerTeleport (aMapToLoad, aSpawnPoint);
+	}
+
+	//TODO Have better way to change layer
+	public void ChangeCollisionLayer (List<string> aLayerToActivate, List<string> aLayerToDeactivate)
+	{
+		foreach (MapColliderLayer mapColliderLayer in m_ListMapColliderLayer) {
+			if(aLayerToActivate.Contains(mapColliderLayer.m_ColliderLayer)){
+				mapColliderLayer.gameObject.SetActive(true);
+			}else if(aLayerToDeactivate.Contains(mapColliderLayer.m_ColliderLayer)){
+				mapColliderLayer.gameObject.SetActive(false);
+			}
+		}
 	}
 }

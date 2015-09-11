@@ -16,8 +16,12 @@ public class GameplayLoader : MonoBehaviour {
 	private MapInfo m_CurrentMapInfo;
 	private MapImporter m_MapImporter;
 
+
 	private bool m_IsLoading = true;
 	private GameObject m_Character = null;
+
+	//TODO Should not use that later in game...
+	public MapInfo CurrentMapInfo {get {return m_CurrentMapInfo;}}
 
 	// Use this for initialization
 	void Start () {
